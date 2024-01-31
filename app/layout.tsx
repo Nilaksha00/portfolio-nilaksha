@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-slate-950 text-slate-50`}>
         <main className="grid grid-cols-12 gap-12 min-h-screen overflow-hidden">
-          <div className="col-span-4 col-start-2">
+          <div className="lg:col-span-4 lg:col-start-2 xl:col-span-4 xl:col-start-2 md:col-span-4 md:col-start-2 col-span-10 col-start-2">
             <div className="grid grid-rows-10 h-full">
               <div className="row-span-8 row-start-2">
                 <Header />
