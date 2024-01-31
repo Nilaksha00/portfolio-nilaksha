@@ -16,7 +16,7 @@ export default function Header() {
       <div>
         <div className="m-0 p-0">
           <p className="text-teal-400 xl:text-4xl lg:text-4xl md:text-3xl sm:text-3xl text-3xl font-bold tracking-wide p-0 m-0">
-            <span className="text-white">I'm Nilaksha</span> Perera
+            <span className="text-white">I&apos;m Nilaksha</span> Perera
           </p>
         </div>
 
