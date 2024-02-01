@@ -37,7 +37,7 @@ export default function Header() {
       <div>
         <nav>
           <ul className="flex flex-col gap-3">
-            {links.map((link, index) => (
+            {links.map((link) => (
               <li
                 key={link.hash}
                 className="flex flex-row items-center cursor-pointer w-fit "
@@ -64,48 +64,6 @@ export default function Header() {
                   </div>
                 </Link>
               </li>
-
-              // <div
-              //   className="flex flex-row items-center cursor-pointer w-fit"
-              //   key={index}
-              //   onClick={() => {
-              //     // setActiveIndex(index);
-              //     // console.log(activeIndex);
-              //   }}
-              // >
-              //   {index ? (
-              //     <svg
-              //       width="70"
-              //       height="2"
-              //       viewBox="0 0 70 2"
-              //       fill="none"
-              //       xmlns="http://www.w3.org/2000/svg"
-              //       className="transition-all duration-1000 ease-in-out"
-              //     >
-              //       <path d="M0 0.797852L70 0.797852" stroke="#25FFCB" />
-              //     </svg>
-              //   ) : (
-              //     <svg
-              //       width="30"
-              //       height="2"
-              //       viewBox="0 0 30 2"
-              //       fill="none"
-              //       xmlns="http://www.w3.org/2000/svg"
-              //       className="transition-all duration-500 ease-linear"
-              //     >
-              //       <path d="M0 1.29785L30 1.29785" stroke="#7B7B7B" />
-              //     </svg>
-              //   )}
-
-              //   <div
-              //     className={`text-[10px] ml-4 font-medium tracking-widest uppercase ${
-              //       index ? "text-teal-400" : "text-neutral-500"
-              //     }
-              //     `}
-              //   >
-              //     {item}
-              //   </div>
-              // </div>
             ))}
           </ul>
         </nav>

@@ -16,20 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-slate-950 text-slate-50`}>
-        <main className="grid grid-cols-12 gap-12 min-h-screen overflow-hidden">
-          <div className="lg:col-span-4 lg:col-start-2 xl:col-span-4 xl:col-start-2 md:col-span-4 md:col-start-2 sm:col-span-10 sm:col-start-2 col-span-7 col-start-2">
-            <div className="grid grid-rows-10 h-full ">
-              <div className="row-span-8 row-start-2">
-                <Header />
-              </div>
-            </div>
+      <body
+        className={`${inter.className} bg-gray-950 text-slate-50 xl:px-[6%] lg:px-[6%] md:px-[7%] sm:px-[8%] px-[10%]`}
+      >
+        <main className="">
+          <div className="fixed top-0 w-1/3 h-screen flex items-center justify-center">
+            <Header />
           </div>
-          <div className="col-span-6 col-start-6">
-            <div className="grid grid-rows-8 h-full">
-              <div className="row-span-6 row-start-2">{children}</div>
-            </div>
-          </div>
+          {/* <div className="flex-1 flex items-center">{children}</div> */}
         </main>
       </body>
     </html>
