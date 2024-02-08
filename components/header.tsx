@@ -9,7 +9,7 @@ import { links } from "@/lib/data";
 export default function Header() {
   return (
     <motion.div
-      className="flex flex-col justify-center space-y-12 h-full"
+      className="flex flex-col justify-center space-y-12 h-fit w-full"
       initial={{ x: -500, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
     >
@@ -26,7 +26,7 @@ export default function Header() {
         </div>
         {/* Short intro */}
         <div>
-          <div className=" text-white lg:text-base md:text-base sm:text-sm text-sm font-light tracking-wide mt-10">
+          <div className=" text-white lg:text-base md:text-sm sm:text-sm text-sm font-light tracking-wide mt-10">
             I am a dedicated individual who loves to build digital excellence
             with every line of code.
           </div>
