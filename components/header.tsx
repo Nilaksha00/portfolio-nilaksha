@@ -1,12 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 
 export default function Header() {
+  const [activeIndex, setActiveIndex] = useState(1);
+
   return (
     <motion.div
       className="flex flex-col justify-center space-y-12 h-fit w-full"
@@ -16,48 +18,67 @@ export default function Header() {
       {/* Name and position */}
       <div>
         <div className="m-0 p-0">
-          <p className="text-teal-400 xl:text-4xl lg:text-4xl md:text-3xl sm:text-3xl text-3xl font-bold tracking-wide p-0 m-0">
-            <span className="text-white">I&apos;m Nilaksha</span> Perera
+          <p className="text-teal-400 xl:text-6xl lg:text-6xl md:text-5xl sm:text-4xl text-4xl font-bold tracking-normal p-0 m-0">
+            <span className="text-slate-100 mr-1">Nilaksha</span> Perera
           </p>
         </div>
 
-        <div className=" text-white xl:text-xl lg:text-xl md:text-base sm:text-sm text-sm font-medium mt-2">
-          Experienced Software Engineer
+        <div className="text-slate-600 xl:text-xl lg:text-xl md:text-base sm:text-sm text-sm font-medium tracking-wider mt-1">
+          ASSOCIATE SOFTWARE ENGINEER
         </div>
         {/* Short intro */}
-        <div>
+        {/* <div>
           <div className=" text-white lg:text-base md:text-sm sm:text-sm text-sm font-light tracking-wide mt-10">
             I am a dedicated individual who loves to build digital excellence
             with every line of code.
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Links for the content */}
       <div>
         <nav>
-          <ul className="flex flex-col gap-3">
+          <ul className="flex flex-col gap-4">
             {links.map((link) => (
               <li
                 key={link.hash}
-                className="flex flex-row items-center cursor-pointer w-fit "
+                className="flex flex-row items-center cursor-pointer w-fit"
+                onClick={() => {
+                  setActiveIndex(link?.id);
+                }}
               >
                 <Link href={link.hash} passHref>
-                  <div className="flex flex-row items-center cursor-pointer w-fit">
-                    <svg
-                      width="30"
-                      height="2"
-                      viewBox="0 0 30 2"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="transition-all duration-500 ease-linear"
-                    >
-                      <path d="M0 1.29785L30 1.29785" stroke="#7B7B7B" />
-                    </svg>
+                  <div className="flex flex-row items-center cursor-pointer w-fit group">
+                    {link?.id == activeIndex ? (
+                      <svg
+                        width="70"
+                        height="2"
+                        viewBox="0 0 70 2"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="transition-all duration-1000 ease-in-out mt-[-4px]"
+                      >
+                        <path d="M0 0.797852L70 0.797852" stroke="#25FFCB" />
+                      </svg>
+                    ) : (
+                      <svg
+                        width="30"
+                        height="2"
+                        viewBox="0 0 30 2"
+                        fill="none"
+                        className="transition-all duration-500 ease-linear mt-[-4px]"
+                        style={{ transformOrigin: "left center" }}
+                      >
+                        <path d="M0 1.29785L30 1.29785" stroke="#94a3b8" />
+                      </svg>
+                    )}
 
                     <div
-                      className={`text-[10px] ml-4 font-medium tracking-widest uppercase ${"text-neutral-500"}
-                    `}
+                      className={`text-[13px] ml-7 font-medium tracking-widest uppercase ${
+                        link?.id == activeIndex
+                          ? "text-teal-400"
+                          : "text-slate-400 group-hover:text-teal-400"
+                      }`}
                     >
                       {link.name}
                     </div>
@@ -72,8 +93,8 @@ export default function Header() {
       {/* CV and Social Links */}
       <div>
         <Link href="/nilaksha_resume.pdf" passHref>
-          <div className="w-fit h-fit px-4 py-1.5 bg-teal-400 bg-opacity-10 rounded-[9px] justify-center items-center gap-2 inline-flex hover:scale-95 transition-all duration-500 ease-in-out">
-            <div className="text-teal-400 text-[13px] mr-1 tracking-wide ">
+          <div className="w-fit h-fit px-5 py-1.5 bg-teal-400 bg-opacity-10 rounded-[9px] justify-center items-center gap-2 inline-flex hover:scale-95 transition-all duration-500 ease-in-out">
+            <div className="text-teal-400 text-normal mr-1 mt-[2px] tracking-wider ">
               See my resume
             </div>
 
@@ -93,8 +114,8 @@ export default function Header() {
           <Link href="https://github.com/nilaksha00/" passHref>
             <Image
               src="/github.svg"
-              width={18}
-              height={20}
+              width={20}
+              height={22}
               alt="GitHub"
               className="cursor-pointer  hover:scale-90 transition-all duration-500 ease-in-out"
             />
@@ -102,7 +123,7 @@ export default function Header() {
           <Link href="https://www.instagram.com/frostine.00/" passHref>
             <Image
               src="/instagram.svg"
-              width={18}
+              width={20}
               height={20}
               alt="Instagram"
               className="cursor-pointer  hover:scale-90 transition-all duration-500 ease-in-out"
@@ -111,7 +132,7 @@ export default function Header() {
           <Link href="https://medium.com/@nilaksha00" passHref>
             <Image
               src="/medium.svg"
-              width={18}
+              width={20}
               height={20}
               alt="Medium"
               className="cursor-pointer hover:scale-90 transition-all duration-500 ease-in-out"
