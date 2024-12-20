@@ -1,18 +1,28 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <motion.section
+    <section
       id="about"
-      className="w-full min-h-screen bg-none text-xl tracking-wide text-slate-300 font-light px-6 py-12"
-      initial={{ opacity: 0, x: 500 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      // viewport={{ once: false, amount: 0.2 }} // Replay animations and trigger when 20% of the section is visible
+      className="w-full min-h-screen bg-none text-xl tracking-wide text-slate-300 font-light px-6 py-6"
+      // Replay animations and trigger when 20% of the section is visible
       // transition={{ duration: 0.5, ease: "easeInOut" }}
     >
+      <div className="w-full flex justify-center	">
+        <div className="w-[180px] h-[180px] mb-12">
+          <Image
+            src="/images/front-pic.jpg"
+            width={500}
+            height={500}
+            className="rounded-full"
+            alt="Picture of the author"
+          />
+        </div>
+      </div>
+
       <p>
         I’m a full-stack developer with a strong foundation in building dynamic
         and user-focused web applications. With a year of experience as an
@@ -36,6 +46,6 @@ export default function About() {
         diving into anime, and keeping up with the latest trends in tech and
         design.
       </p>
-    </motion.section>
+    </section>
   );
 }

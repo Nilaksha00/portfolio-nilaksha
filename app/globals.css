@@ -18,5 +18,9 @@
 
 *::selection {
   background-color: #2dd4bf; /* Background color for selected text */
-  color: #144D5F; /* Text color for selected text */
+  color: #144d5f; /* Text color for selected text */
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

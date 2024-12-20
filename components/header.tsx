@@ -14,7 +14,11 @@ export default function Header() {
 
     const section = document.getElementById(hash.substring(1));
     if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      section.scrollIntoView({
+        behavior: "smooth",
+        // block: "start",
+       
+      });
 
       setTimeout(() => {
         window.history.replaceState(null, "", hash); // Update the URL

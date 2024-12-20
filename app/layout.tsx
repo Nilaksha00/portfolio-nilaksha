@@ -30,8 +30,8 @@ export default function RootLayout({
           <div className=" w-full h-full md:w-4/12 flex items-center">
             <Header />
           </div>
-          <div className="w-full md:w-2/12 "></div>
-          <div className="h-full md:w-6/12 overflow-y-auto custom-scrollbar mt-2 main-container">
+          <div className="w-full md:w-1/12 "></div>
+          <div className="h-full md:w-7/12 overflow-y-auto custom-scrollbar mt-2 main-container">
             {children}
           </div>
         </main>

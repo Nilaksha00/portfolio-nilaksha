@@ -5,6 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
+import { title } from "process";
 
 export const links = [
   {
@@ -37,37 +38,57 @@ export const links = [
     name: "Certificates & Awards",
     hash: "#awards",
   },
-  {
-    id: 7,
-    name: "Contact",
-    hash: "#contact",
-  },
+  // {
+  //   id: 7,
+  //   name: "Contact",
+  //   hash: "#contact",
+  // },
 ] as const;
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    company: "TS Technologies",
+    title: "Associate Software Engineer",
+    location: "Colombo, Sri Lanka",
     description:
       "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: " Feb 2024 - Present",
+    skills: ["Javascript", "ReactJS", "EmberJS", "Sass"],
   },
+  // {
+  //   company: "Voxitec",
+  //   title: "Associate Software Engineer",
+  //   location: "Colombo, Sri Lanka",
+  //   description:
+  //     "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+  //   icon: React.createElement(CgWorkAlt),
+  //   date: " April 2023 - February 2024 ",
+  // },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
-    description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
-  },
-  {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    company: "DirectFN",
+    title: "Intern Software Engineer",
+    location: "Colombo, Sri Lanka",
     description:
       "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: " March - Nov 2022",
+    skills: ["Javascript", "EmberJS", "Sass"],
+  },
+] as const;
+
+export const educationData = [
+  {
+    exam: "BSc (Hons) in Information Technology specialized in Software Engineering",
+    institute: "SLIIT",
+    year: "2020 - 2024",
+    description: "",
+  },
+  {
+    exam: "GCE Advanced Level Examination",
+    institute: "Holy Cross College, Gampaha",
+    year: "2019",
+    description: "Passed the examination in physical science stream.",
   },
 ] as const;
 
