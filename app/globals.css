@@ -3,8 +3,8 @@
 @tailwind utilities;
 @import "./styles/fonts.css";
 
-*{
-  font-family: 'Calibre', sans-serif;
+* {
+  font-family: "Calibre", sans-serif;
 }
 /* Custom CSS to hide scrollbars but allow scrolling */
 .custom-scrollbar::-webkit-scrollbar {
@@ -14,4 +14,9 @@
 .custom-scrollbar {
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
   scrollbar-width: none; /* For Firefox */
+}
+
+*::selection {
+  background-color: #2dd4bf; /* Background color for selected text */
+  color: #144D5F; /* Text color for selected text */
 }

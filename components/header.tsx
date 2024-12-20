@@ -9,6 +9,19 @@ import { links } from "@/lib/data";
 export default function Header() {
   const [activeIndex, setActiveIndex] = useState(1);
 
+  const handleScroll = (hash: string, id: number) => {
+    setActiveIndex(id);
+
+    const section = document.getElementById(hash.substring(1));
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      setTimeout(() => {
+        window.history.replaceState(null, "", hash); // Update the URL
+      }, 500);
+    }
+  };
+
   return (
     <motion.div
       className="flex flex-col justify-center space-y-12 h-fit w-full"
@@ -26,13 +39,6 @@ export default function Header() {
         <div className="text-slate-600 xl:text-xl lg:text-xl md:text-base sm:text-sm text-sm font-medium tracking-wider mt-1">
           ASSOCIATE SOFTWARE ENGINEER
         </div>
-        {/* Short intro */}
-        {/* <div>
-          <div className=" text-white lg:text-base md:text-sm sm:text-sm text-sm font-light tracking-wide mt-10">
-            I am a dedicated individual who loves to build digital excellence
-            with every line of code.
-          </div>
-        </div> */}
       </div>
 
       {/* Links for the content */}
@@ -43,12 +49,14 @@ export default function Header() {
               <li
                 key={link.hash}
                 className="flex flex-row items-center cursor-pointer w-fit"
-                onClick={() => {
-                  setActiveIndex(link?.id);
-                }}
               >
                 <Link href={link.hash} passHref>
-                  <div className="flex flex-row items-center cursor-pointer w-fit group">
+                  <div
+                    className="flex flex-row items-center cursor-pointer w-fit group"
+                    onClick={() => {
+                      handleScroll(link.hash, link.id);
+                    }}
+                  >
                     {link?.id == activeIndex ? (
                       <svg
                         width="70"

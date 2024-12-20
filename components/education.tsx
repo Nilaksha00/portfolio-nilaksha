@@ -3,17 +3,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function Experience() {
+export default function Education() {
   return (
     <motion.section
-      id="experience"
+      id="education"
       className="w-full h-full bg-none text-xl tracking-wide text-slate-300 font-light	"
       // initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.2 }} // Replay animations and trigger when 20% of the section is visible
       transition={{ duration: 0.75, ease: "easeInOut" }}
     >
-      jkdjskjdkjds
+      dkf/lsfjdsklfdlkgjd
     </motion.section>
   );
 }

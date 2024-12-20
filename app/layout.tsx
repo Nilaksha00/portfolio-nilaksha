@@ -31,14 +31,14 @@ export default function RootLayout({
             <Header />
           </div>
           <div className="w-full md:w-2/12 "></div>
-          <div className="w-full md:w-6/12 overflow-y-auto custom-scrollbar py-4">
-            <div className="">{children}</div>
+          <div className="h-full md:w-6/12 overflow-y-auto custom-scrollbar mt-2 main-container">
+            {children}
           </div>
         </main>
       </body>
       <div className="cursor-none -z-50">
-              <Cursor />
-            </div>
+        <Cursor />
+      </div>
     </html>
   );
 }
