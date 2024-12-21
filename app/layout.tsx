@@ -2,13 +2,14 @@ import Header from "@/components/header";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import Cursor from "../components/Cursor";
+import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"], // Specify the weights you need
 });
 export const metadata = {
-  title: "Nilaksha | Personal Portfolio",
+  title: "Nilaksha Perera | Portfolio",
   description: "Nilaksha Perera is an experienced software engineer.",
 };
 
@@ -39,6 +40,7 @@ export default function RootLayout({
       <div className="cursor-none -z-50">
         <Cursor />
       </div>
+      <Toaster />
     </html>
   );
 }

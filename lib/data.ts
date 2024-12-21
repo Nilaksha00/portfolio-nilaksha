@@ -25,19 +25,20 @@ export const links = [
   },
   {
     id: 4,
-    name: "Projects",
-    hash: "#projects",
-  },
-  {
-    id: 5,
     name: "Tech Stack",
     hash: "#techstack",
   },
   {
-    id: 6,
-    name: "Certificates & Awards",
-    hash: "#awards",
+    id: 5,
+    name: "Projects",
+    hash: "#projects",
   },
+
+  // {
+  //   id: 6,
+  //   name: "Certificates & Awards",
+  //   hash: "#awards",
+  // },
   // {
   //   id: 7,
   //   name: "Contact",
@@ -80,7 +81,7 @@ export const experiencesData = [
 export const educationData = [
   {
     exam: "BSc (Hons) in Information Technology specialized in Software Engineering",
-    institute: "SLIIT",
+    institute: "SLIIT (Sri Lanka Intitute of Information Technology)",
     year: "2020 - 2024",
     description: "",
   },
@@ -94,6 +95,7 @@ export const educationData = [
 
 export const projectsData = [
   {
+    name: "dsds",
     title: "CorpComment",
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
@@ -101,6 +103,7 @@ export const projectsData = [
     imageUrl: corpcommentImg,
   },
   {
+    name: "dsds",
     title: "rmtDev",
     description:
       "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
@@ -108,6 +111,16 @@ export const projectsData = [
     imageUrl: rmtdevImg,
   },
   {
+    name: "dsds",
+    title: "Word Analytics",
+    description:
+      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
+    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+    imageUrl: wordanalyticsImg,
+  },
+
+  {
+    name: "dsds",
     title: "Word Analytics",
     description:
       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
@@ -117,23 +130,104 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
-  "Framer Motion",
+  {
+    name: "Programming Languages",
+    list: [
+      "JavaScript(ES6+)",
+      "TypeScript",
+      "Java",
+      "C#",
+      "Python",
+      "HTML",
+      "CSS",
+      "Sass",
+    ],
+  },
+  {
+    name: "Front-end Technologies",
+    list: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "React Native",
+      "Tailwind CSS",
+      "Styled Components",
+      "Framer Motion",
+      "MapGL",
+      "Konva",
+      "Redux",
+      "Express",
+      "Flask",
+    ],
+  },
+  {
+    name: "Backend-end Technologies",
+    list: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "React Native",
+      "Tailwind CSS",
+      "Styled Components",
+      "Framer Motion",
+      "MapGL",
+      "Konva",
+      "Redux",
+      "Express",
+      "Flask",
+    ],
+  },
+  {
+    name: "Databases",
+    list: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "React Native",
+      "Tailwind CSS",
+      "Styled Components",
+      "Framer Motion",
+      "MapGL",
+      "Konva",
+      "Redux",
+      "Express",
+      "Flask",
+    ],
+  },
+  {
+    name: "Tools & Platforms",
+    list: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "React Native",
+      "Tailwind CSS",
+      "Styled Components",
+      "Framer Motion",
+      "MapGL",
+      "Konva",
+      "Redux",
+      "Express",
+      "Flask",
+    ],
+  },
+  // "HTML",
+  // "CSS",
+  // "JavaScript",
+  // "TypeScript",
+  // "React",
+  // "Next.js",
+  // "Node.js",
+  // "Git",
+  // "Tailwind",
+  // "Prisma",
+  // "MongoDB",
+  // "Redux",
+  // "GraphQL",
+  // "Apollo",
+  // "Express",
+  // "PostgreSQL",
+  // "Python",
+  // "Django",
+  // "Framer Motion",
 ] as const;

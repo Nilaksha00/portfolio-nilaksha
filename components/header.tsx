@@ -1,13 +1,85 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
+import { toast } from "react-hot-toast";
 
 export default function Header() {
   const [activeIndex, setActiveIndex] = useState(1);
+
+  // useEffect(() => {
+  //   const handleScrollHighlight = () => {
+  //     const observer = new IntersectionObserver(
+  //       (entries) => {
+  //         entries.forEach((entry) => {
+  //           if (entry.isIntersecting) {
+  //             const visibleSection = links.find(
+  //               (link) => link.hash === `#${entry.target.id}`
+  //             );
+  //             if (visibleSection) {
+  //               setActiveIndex(visibleSection.id);
+  //               console.log("visibleSection");
+  //             }
+  //           }
+  //         });
+  //       },
+  //       { threshold: 0.5 }
+  //     );
+
+  //     // Observe each section
+  //     links.forEach((link) => {
+  //       const section = document.getElementById(link.hash.substring(1));
+  //       if (section) {
+  //         observer.observe(section);
+  //       }
+  //     });
+
+  //     return () => observer.disconnect();
+  //   };
+
+  //   handleScrollHighlight();
+  // }, []);
+
+  useEffect(() => {
+    const handleScrollHighlight = () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const visibleSection = links.find(
+                (link) => link.hash === `#${entry.target.id}`
+              );
+              if (visibleSection) {
+                setActiveIndex(visibleSection.id);
+                console.log("Section highlighted:", visibleSection.name); // Debug log
+              }
+            }
+          });
+        },
+        {
+          threshold: 0.1, // Change threshold to be more sensitive
+        }
+      );
+
+      // Observe each section
+      links.forEach((link) => {
+        const section = document.getElementById(link.hash.substring(1));
+        if (section) {
+          observer.observe(section);
+        }
+      });
+
+      // Cleanup observer on component unmount
+      return () => {
+        observer.disconnect();
+      };
+    };
+
+    handleScrollHighlight();
+  }, [links]); // Re-run if `links` changes
 
   const handleScroll = (hash: string, id: number) => {
     setActiveIndex(id);
@@ -17,13 +89,23 @@ export default function Header() {
       section.scrollIntoView({
         behavior: "smooth",
         // block: "start",
-       
       });
 
-      setTimeout(() => {
-        window.history.replaceState(null, "", hash); // Update the URL
-      }, 500);
+      // setTimeout(() => {
+      //   window.history.replaceState(null, "", hash); // Update the URL
+      // }, 500);
     }
+  };
+
+  const handleCopyEmail = () => {
+    const email = "nilaksha.sandani@gmail.com";
+    console.log(email);
+    navigator.clipboard.writeText(email).then(() => {
+      toast("Email address copied to clipboard!", {
+        duration: 2000,
+        position: "bottom-center",
+      });
+    });
   };
 
   return (
@@ -54,48 +136,46 @@ export default function Header() {
                 key={link.hash}
                 className="flex flex-row items-center cursor-pointer w-fit"
               >
-                <Link href={link.hash} passHref>
-                  <div
-                    className="flex flex-row items-center cursor-pointer w-fit group"
-                    onClick={() => {
-                      handleScroll(link.hash, link.id);
-                    }}
-                  >
-                    {link?.id == activeIndex ? (
-                      <svg
-                        width="70"
-                        height="2"
-                        viewBox="0 0 70 2"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="transition-all duration-1000 ease-in-out mt-[-4px]"
-                      >
-                        <path d="M0 0.797852L70 0.797852" stroke="#25FFCB" />
-                      </svg>
-                    ) : (
-                      <svg
-                        width="30"
-                        height="2"
-                        viewBox="0 0 30 2"
-                        fill="none"
-                        className="transition-all duration-500 ease-linear mt-[-4px]"
-                        style={{ transformOrigin: "left center" }}
-                      >
-                        <path d="M0 1.29785L30 1.29785" stroke="#94a3b8" />
-                      </svg>
-                    )}
-
-                    <div
-                      className={`text-[13px] ml-7 font-medium tracking-widest uppercase ${
-                        link?.id == activeIndex
-                          ? "text-teal-400"
-                          : "text-slate-400 group-hover:text-teal-400"
-                      }`}
+                <div
+                  className="flex flex-row items-center cursor-pointer w-fit group"
+                  onClick={() => {
+                    handleScroll(link.hash, link.id);
+                  }}
+                >
+                  {link?.id == activeIndex ? (
+                    <svg
+                      width="70"
+                      height="2"
+                      viewBox="0 0 70 2"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="transition-all duration-1000 ease-in-out mt-[-4px]"
                     >
-                      {link.name}
-                    </div>
+                      <path d="M0 0.797852L70 0.797852" stroke="#25FFCB" />
+                    </svg>
+                  ) : (
+                    <svg
+                      width="30"
+                      height="2"
+                      viewBox="0 0 30 2"
+                      fill="none"
+                      className="transition-all duration-500 ease-linear mt-[-4px]"
+                      style={{ transformOrigin: "left center" }}
+                    >
+                      <path d="M0 1.29785L30 1.29785" stroke="#94a3b8" />
+                    </svg>
+                  )}
+
+                  <div
+                    className={`text-[13px] ml-7 font-medium tracking-widest uppercase ${
+                      link?.id == activeIndex
+                        ? "text-teal-400"
+                        : "text-slate-400 group-hover:text-teal-400"
+                    }`}
+                  >
+                    {link.name}
                   </div>
-                </Link>
+                </div>
               </li>
             ))}
           </ul>
@@ -114,41 +194,76 @@ export default function Header() {
           </div>
         </Link>
         <div className="flex flex-row justify-start items-center gap-6 mt-6">
-          <Link href="https://www.linkedin.com/in/nilaksha00/" passHref>
+          <motion.div
+            whileHover={{ scale: 1.2 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            onClick={() => handleCopyEmail()}
+            className="cursor-pointer"
+          >
             <Image
-              src="/linkedin.svg"
-              width={18}
+              src="/email.svg"
+              width={21}
               height={20}
-              alt="LinkedIn"
-              className="cursor-pointer hover:scale-90 transition-all duration-500 ease-in-out"
+              alt="Email"
+              className="mx-1"
             />
+          </motion.div>
+
+          <Link href="https://www.linkedin.com/in/nilaksha00/" passHref>
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <Image
+                src="/linkedin.svg"
+                width={18}
+                height={20}
+                alt="LinkedIn"
+                className="cursor-pointer mx-1"
+              />
+            </motion.div>
           </Link>
           <Link href="https://github.com/nilaksha00/" passHref>
-            <Image
-              src="/github.svg"
-              width={20}
-              height={22}
-              alt="GitHub"
-              className="cursor-pointer  hover:scale-90 transition-all duration-500 ease-in-out"
-            />
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <Image
+                src="/github.svg"
+                width={20}
+                height={22}
+                alt="GitHub"
+                className="cursor-pointer mx-1"
+              />
+            </motion.div>
           </Link>
           <Link href="https://www.instagram.com/frostine.00/" passHref>
-            <Image
-              src="/instagram.svg"
-              width={20}
-              height={20}
-              alt="Instagram"
-              className="cursor-pointer  hover:scale-90 transition-all duration-500 ease-in-out"
-            />
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <Image
+                src="/instagram.svg"
+                width={20}
+                height={20}
+                alt="Instagram"
+                className="cursor-pointer mx-1"
+              />
+            </motion.div>
           </Link>
           <Link href="https://medium.com/@nilaksha00" passHref>
-            <Image
-              src="/medium.svg"
-              width={20}
-              height={20}
-              alt="Medium"
-              className="cursor-pointer hover:scale-90 transition-all duration-500 ease-in-out"
-            />
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <Image
+                src="/medium.svg"
+                width={20}
+                height={20}
+                alt="Medium"
+                className="cursor-pointer mx-1"
+              />
+            </motion.div>
           </Link>
         </div>
       </div>

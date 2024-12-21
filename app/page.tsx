@@ -5,6 +5,8 @@ import Education from "@/components/education";
 import Experience from "@/components/experience";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Projects from "@/components/projects";
+import Techstack from "@/components/techstack";
 
 export default function Home() {
   return (
@@ -17,6 +19,9 @@ export default function Home() {
       <About />
       <Experience />
       <Education />
+      <Techstack />
+      <Projects />
+     
     </motion.main>
   );
 }
