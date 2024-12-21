@@ -10,6 +10,14 @@ export default function Education() {
       id="education"
       className="w-full min-h-full bg-none text-xl tracking-wide text-slate-300 font-light mb-24 p-3"
     >
+        <div className="flex items-center w-full mb-8">
+        <hr className="flex-grow border-t-1 border-teal-400 mb-1 rounded-full" />
+
+        <h2 className="my-0 ml-4 text-teal-400 font-semibold tracking-widest">
+          EDUCATION
+        </h2>
+      </div>
+
       {educationData.map((i, index) => (
         // <div key={index} className="bg-slate-800/50 rounded-2xl text-white w-full my-6">
         <motion.div

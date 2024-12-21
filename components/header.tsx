@@ -10,38 +10,27 @@ import { toast } from "react-hot-toast";
 export default function Header() {
   const [activeIndex, setActiveIndex] = useState(1);
 
-  // useEffect(() => {
-  //   const handleScrollHighlight = () => {
-  //     const observer = new IntersectionObserver(
-  //       (entries) => {
-  //         entries.forEach((entry) => {
-  //           if (entry.isIntersecting) {
-  //             const visibleSection = links.find(
-  //               (link) => link.hash === `#${entry.target.id}`
-  //             );
-  //             if (visibleSection) {
-  //               setActiveIndex(visibleSection.id);
-  //               console.log("visibleSection");
-  //             }
-  //           }
-  //         });
-  //       },
-  //       { threshold: 0.5 }
-  //     );
+  const text1 = "Nilaksha";
+  const text2 = "Perera";
 
-  //     // Observe each section
-  //     links.forEach((link) => {
-  //       const section = document.getElementById(link.hash.substring(1));
-  //       if (section) {
-  //         observer.observe(section);
-  //       }
-  //     });
+  const letters1 = text1.split(""); 
+  const letters2 = text2.split("");
 
-  //     return () => observer.disconnect();
-  //   };
+  const typingVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.28, 
+      },
+    },
+  };
 
-  //   handleScrollHighlight();
-  // }, []);
+  const letterVariants = {
+    hidden: { opacity: 0, x: 10 }, 
+    visible: { opacity: 1, x: 0, transition: { duration: 0 } },
+  };
 
   useEffect(() => {
     const handleScrollHighlight = () => {
@@ -79,7 +68,7 @@ export default function Header() {
     };
 
     handleScrollHighlight();
-  }, [links]); // Re-run if `links` changes
+  }, [links]);
 
   const handleScroll = (hash: string, id: number) => {
     setActiveIndex(id);
@@ -88,12 +77,7 @@ export default function Header() {
     if (section) {
       section.scrollIntoView({
         behavior: "smooth",
-        // block: "start",
       });
-
-      // setTimeout(() => {
-      //   window.history.replaceState(null, "", hash); // Update the URL
-      // }, 500);
     }
   };
 
@@ -117,12 +101,35 @@ export default function Header() {
       {/* Name and position */}
       <div>
         <div className="m-0 p-0">
-          <p className="text-teal-400 xl:text-6xl lg:text-6xl md:text-5xl sm:text-4xl text-4xl font-bold tracking-normal p-0 m-0">
-            <span className="text-slate-100 mr-1">Nilaksha</span> Perera
+          <p className="text-teal-400 xl:text-6xl lg:text-6xl md:text-5xl sm:text-4xl text-4xl font-bold tracking-wide p-0 m-0">
+            {/* <span className="text-slate-100 mr-1">Nilaksha</span> Perera */}
+
+            <motion.span
+              className="mr-4"
+              variants={typingVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {letters1.map((letter, index) => (
+                <motion.span key={index} variants={letterVariants}>
+                  {letter}
+                </motion.span>
+              ))}
+              <span className="mx-2"></span>
+              {letters2.map((letter, index) => (
+                <motion.span
+                  key={index}
+                  variants={letterVariants}
+                  className="text-slate-100"
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </motion.span>
           </p>
         </div>
 
-        <div className="text-slate-600 xl:text-xl lg:text-xl md:text-base sm:text-sm text-sm font-medium tracking-wider mt-1">
+        <div className="text-slate-600 xl:text-xl lg:text-xl md:text-base sm:text-sm text-sm font-medium tracking-wider">
           ASSOCIATE SOFTWARE ENGINEER
         </div>
       </div>

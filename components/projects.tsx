@@ -11,6 +11,14 @@ export default function Projects() {
       id="projects"
       className="w-full min-h-screen bg-none text-xl tracking-wide text-slate-300 font-light mb-32 p-3"
     >
+        <div className="flex items-center w-full mb-8">
+        <hr className="flex-grow border-t-1 border-teal-400 mb-1 rounded-full" />
+
+        <h2 className="my-0 ml-4 text-teal-400 font-semibold tracking-widest">
+          PROJECTS
+        </h2>
+      </div>
+
       {projectsData.map((i, index) => (
         <motion.div
           key={index}

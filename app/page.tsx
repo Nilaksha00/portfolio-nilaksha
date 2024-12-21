@@ -12,16 +12,19 @@ export default function Home() {
   return (
     <motion.main
       className="h-full overflow-y-auto scroll-smooth h-full"
-      initial={{ opacity: 0, x: 500 }}
+      initial={{ opacity: 0, x: 700 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
+      // transition={{
+      //   // opacity: { duration: 0.5, delay: 0.5 }, // Delay the opacity transition
+      //   x: {  delay: 0.5 }, // Delay the x transition
+      // }}
     >
       <About />
       <Experience />
       <Education />
       <Techstack />
       <Projects />
-     
     </motion.main>
   );
 }

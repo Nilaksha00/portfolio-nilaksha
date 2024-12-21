@@ -7,11 +7,19 @@ export default function About() {
   return (
     <section
       id="about"
-      className="w-full min-h-screen bg-none text-xl tracking-wide text-slate-300 font-light px-6 py-6"
+      className="w-full min-h-screen bg-none text-xl tracking-wide text-slate-300 font-light px-6 py-6 mb-24"
       // Replay animations and trigger when 20% of the section is visible
       // transition={{ duration: 0.5, ease: "easeInOut" }}
     >
-      <div className="w-full flex justify-center	">
+      <div className="flex items-center w-full mb-8">
+        <hr className="flex-grow border-t-1 border-teal-400 mb-1 rounded-full" />
+
+        <h2 className="my-0 ml-4 text-teal-400 font-semibold tracking-widest">
+          ABOUT
+        </h2>
+      </div>
+
+      <div className="w-full flex justify-center">
         <div className="w-[180px] h-[180px] mb-12">
           <Image
             src="/images/front-pic.jpg"
