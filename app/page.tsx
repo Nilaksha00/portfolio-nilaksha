@@ -11,7 +11,7 @@ import Techstack from "@/components/techstack";
 export default function Home() {
   return (
     <motion.main
-      className="h-full overflow-y-auto scroll-smooth h-full"
+      className="h-full overflow-y-auto scroll-smooth h-full  xl:pr-[18%] lg:pr-[18%] md:pr-[12%] sm:pr-[12%] pr-[18%]"
       initial={{ opacity: 0, x: 700 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}

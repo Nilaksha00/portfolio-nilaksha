@@ -36,7 +36,7 @@ export default function Techstack() {
             {i.list.map((j, skillIndex) => (
               <span
                 key={skillIndex}
-                className="bg-teal-400 bg-opacity-10 text-teal-400 pt-1 px-4 rounded-full text-base"
+                className="bg-teal-400 bg-opacity-10 text-teal-400 pt-1 px-4 rounded-full text-base  font-medium"
               >
                 {j}
               </span>

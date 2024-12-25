@@ -13,7 +13,7 @@ export default function Header() {
   const text1 = "Nilaksha";
   const text2 = "Perera";
 
-  const letters1 = text1.split(""); 
+  const letters1 = text1.split("");
   const letters2 = text2.split("");
 
   const typingVariants = {
@@ -22,13 +22,13 @@ export default function Header() {
       opacity: 1,
       transition: {
         delayChildren: 0.5,
-        staggerChildren: 0.28, 
+        staggerChildren: 0.28,
       },
     },
   };
 
   const letterVariants = {
-    hidden: { opacity: 0, x: 10 }, 
+    hidden: { opacity: 0, x: 10 },
     visible: { opacity: 1, x: 0, transition: { duration: 0 } },
   };
 
@@ -200,7 +200,7 @@ export default function Header() {
             <Image src="/arrow.svg" width={20} height={11.3} alt="Arrow" />
           </div>
         </Link>
-        <div className="flex flex-row justify-start items-center gap-6 mt-6">
+        <div className="flex flex-row justify-start items-center gap-4 mt-8">
           <motion.div
             whileHover={{ scale: 1.2 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -216,7 +216,11 @@ export default function Header() {
             />
           </motion.div>
 
-          <Link href="https://www.linkedin.com/in/nilaksha00/" passHref>
+          <Link
+            href="https://www.linkedin.com/in/nilaksha00/"
+            passHref
+            target="_blank"
+          >
             <motion.div
               whileHover={{ scale: 1.2 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -230,7 +234,7 @@ export default function Header() {
               />
             </motion.div>
           </Link>
-          <Link href="https://github.com/nilaksha00/" passHref>
+          <Link href="https://github.com/nilaksha00/" passHref target="_blank">
             <motion.div
               whileHover={{ scale: 1.2 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -244,7 +248,11 @@ export default function Header() {
               />
             </motion.div>
           </Link>
-          <Link href="https://www.instagram.com/frostine.00/" passHref>
+          <Link
+            href="https://www.instagram.com/frostine.00/"
+            passHref
+            target="_blank"
+          >
             <motion.div
               whileHover={{ scale: 1.2 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -258,7 +266,7 @@ export default function Header() {
               />
             </motion.div>
           </Link>
-          <Link href="https://medium.com/@nilaksha00" passHref>
+          <Link href="https://medium.com/@nilaksha00" passHref target="_blank">
             <motion.div
               whileHover={{ scale: 1.2 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}

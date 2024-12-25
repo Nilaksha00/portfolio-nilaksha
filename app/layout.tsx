@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`h-screen bg-slate-900 text-slate-50 xl:mx-[10%] lg:mx-[%] md:mx-[7%] sm:mx-[8%] mx-[10%] py-[6%]`}
+        className={`h-screen bg-slate-900 text-slate-50 xl:ml-[10%] lg:ml-[%] md:ml-[7%] sm:ml-[8%] ml-[10%] py-[6%]`}
       >
         <main className="h-full flex items-center flex-col xl:flex-row lg:flex-row md:flex-row">
           {/* <div className="top-0 left-0 w-full h-auto lg:w-1/3 xl:w-1/3 md:w-1/3 xl:sticky lg:sticky md:sticky flex items-center justify-center">

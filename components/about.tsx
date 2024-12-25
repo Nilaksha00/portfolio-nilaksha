@@ -15,7 +15,7 @@ export default function About() {
         <hr className="flex-grow border-t-1 border-teal-400 mb-1 rounded-full" />
 
         <h2 className="my-0 ml-4 text-teal-400 font-semibold tracking-widest">
-          ABOUT
+          PROFILE
         </h2>
       </div>
 
@@ -32,27 +32,23 @@ export default function About() {
       </div>
 
       <p>
-        I’m a full-stack developer with a strong foundation in building dynamic
-        and user-focused web applications. With a year of experience as an
-        Associate Software Engineer specializing in React, I have honed my
-        skills in creating seamless and responsive interfaces that prioritize
-        both design aesthetics and functional excellence.
+        I’m a developer who loves creating user-friendly applications that look
+        great and work smoothly. I enjoy blending creative design with strong
+        technical skills to build experiences that are easy to use and perform
+        well.
       </p>
       <div className="my-4" />
       <p>
-        Currently, I’m expanding my expertise to back-end development, aiming to
-        deliver robust, full-stack solutions. My technical toolkit includes
-        proficiency in JavaScript, React, and a growing knowledge of Java and
-        .NET, enabling me to bridge the gap between front-end and back-end
-        systems effectively.
+        Currently, I’m learning more about back-end development with tools like
+        Java and .NET to add to my skills in JavaScript and React. This helps me
+        build complete solutions that connect the front-end and back-end
+        seamlessly.
       </p>
       <div className="my-4" />
       <p>
-        I thrive on solving challenging problems, learning new technologies, and
-        collaborating with teams to bring innovative ideas to life. Beyond
-        coding, I enjoy exploring the synergy between creativity and logic,
-        diving into anime, and keeping up with the latest trends in tech and
-        design.
+        When I’m not coding, I enjoy watching movies, keeping up with new tech
+        and design trends, and exploring hobbies that combine creativity and
+        logic.
       </p>
     </section>
   );
