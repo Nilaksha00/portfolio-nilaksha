@@ -9,7 +9,7 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className="w-full min-h-screen bg-none text-xl tracking-wide text-slate-300 font-light mb-32 p-3"
+      className="w-full min-h-screen bg-none text-xl tracking-wide text-slate-300 font-light mb-32 p-6 md:p-3"
     >
       <div className="flex items-center w-full mb-8">
         <hr className="flex-grow border-t-1 border-teal-400 mb-1 rounded-full" />
@@ -24,7 +24,7 @@ export default function Projects() {
           key={index}
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="bg-slate-800/50 text-white p-12 rounded-2xl shadow-md w-full my-6 flex flex-row gap-6"
+          className="bg-slate-800/50 text-white p-4 md:p-12 rounded-2xl shadow-md w-full my-6 flex flex-row gap-6"
         >
           {/* <div className="text-sm text-slate-400 mb-3 uppercase font-medium tracking-wider">{i.date}</div> */}
           {/* <div className="w-[240px]">

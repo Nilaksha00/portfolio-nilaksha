@@ -66,6 +66,7 @@ export const experiencesData = [
       "Bootstrap",
       "HTML & CSS",
     ],
+    link: "https://tstpl.com/digital-signage-tstechnologies/",
   },
   // {
   //   company: "Voxitec",
@@ -85,6 +86,7 @@ export const experiencesData = [
     icon: React.createElement(FaReact),
     date: " March - Nov 2022",
     skills: ["Javascript", "EmberJS", "Sass", "HTML"],
+    link: "https://directfn.sa/en/pro11",
   },
 ] as const;
 

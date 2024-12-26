@@ -42,7 +42,7 @@ export default function Header() {
                 (link) => link.hash === `#${entry.target.id}`
               );
               if (visibleSection) {
-                setActiveIndex(visibleSection.id);
+                setActiveIndex(visibleSection.id || 1);
                 console.log("Section highlighted:", visibleSection.name); // Debug log
               }
             }
@@ -101,8 +101,7 @@ export default function Header() {
       {/* Name and position */}
       <div>
         <div className="m-0 p-0">
-          <p className="text-teal-400 xl:text-6xl lg:text-6xl md:text-5xl sm:text-4xl text-4xl font-bold tracking-wide p-0 m-0">
-            {/* <span className="text-slate-100 mr-1">Nilaksha</span> Perera */}
+          <p className="text-teal-400 xl:text-6xl lg:text-6xl md:text-5xl sm:text-5xl text-5xl font-bold tracking-wide p-0 m-0">
 
             <motion.span
               className="mr-4"

@@ -8,7 +8,7 @@ export default function Techstack() {
   return (
     <div
       id="techstack"
-      className="w-full min-h-screen bg-none text-xl tracking-wide text-slate-300 font-light mb-32 p-3"
+      className="w-full min-h-screen bg-none text-xl tracking-wide text-slate-300 font-light mb-32 p-6 md:p-3"
     >
       <div className="flex items-center w-full mb-8">
         <hr className="flex-grow border-t-1 border-teal-400 mb-1 rounded-full" />
@@ -21,7 +21,7 @@ export default function Techstack() {
       {skillsData.map((i, index) => (
         <motion.div
           key={index}
-          className="bg-slate-800/50 text-white rounded-2xl shadow-md w-full my-6 p-12"
+          className="bg-slate-800/50 text-white rounded-2xl shadow-md w-full my-6 p-4 md:p-12"
           whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >

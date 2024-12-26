@@ -8,7 +8,7 @@ export default function Education() {
   return (
     <div
       id="education"
-      className="w-full min-h-full bg-none text-xl tracking-wide text-slate-300 font-light mb-24 p-3"
+      className="w-full min-h-full bg-none text-xl tracking-wide text-slate-300 font-light mb-24 p-6 md:p-3"
     >
       <div className="flex items-center w-full mb-8">
         <hr className="flex-grow border-t-1 border-teal-400 mb-1 rounded-full" />
@@ -25,7 +25,7 @@ export default function Education() {
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          <div className="p-12 h-full w-full transition-transform transform duration-300 ease-in-out">
+          <div className="p-4 md:p-12 h-full w-full transition-transform transform duration-300 ease-in-out">
             <div className="flex items-center justify-between gap-4 flex-nowrap mb-4">
               <div>
                 <h2 className="text-xl font-medium m-0 tracking-wide">
