@@ -11,8 +11,8 @@ import { link } from "fs";
 export const links = [
   {
     id: 1,
-    name: "PROFILE",
-    hash: "#about",
+    name: "Profile",
+    hash: "#profile",
   },
   {
     id: 2,
@@ -173,7 +173,7 @@ export const projectsData = [
     name: "DD Footwear ",
     title: " E-commerce Application",
     description:
-      "An e-commerce and inventory management system for a leading footwear manufacturer, enabling B2B and B2C sales, stock tracking, and order management",
+      "An e-commerce and inventory management system, enabling B2B and B2C sales, stock tracking, and order management",
     tags: [
       "Typescript",
       "Nextjs",

@@ -6,7 +6,7 @@ import React from "react";
 export default function About() {
   return (
     <section
-      id="about"
+      id="profile"
       className="w-full min-h-screen bg-none text-xl tracking-wide text-slate-300 font-light px-6 py-6 mb-24"
       // Replay animations and trigger when 20% of the section is visible
       // transition={{ duration: 0.5, ease: "easeInOut" }}

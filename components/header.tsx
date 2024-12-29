@@ -33,42 +33,46 @@ export default function Header() {
   };
 
   useEffect(() => {
-    const handleScrollHighlight = () => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const visibleSection = links.find(
-                (link) => link.hash === `#${entry.target.id}`
-              );
-              if (visibleSection) {
-                setActiveIndex(visibleSection.id || 1);
-                console.log("Section highlighted:", visibleSection.name); // Debug log
-              }
+    // const handleScrollHighlight = () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const visibleSection = links.find(
+              (link) => link.hash === `#${entry.target.id}`
+            );
+            if (visibleSection) {
+              setActiveIndex(visibleSection?.id);
+              console.log("Section highlighted:", visibleSection.id); // Debug log
             }
-          });
-        },
-        {
-          threshold: 0.1, // Change threshold to be more sensitive
-        }
-      );
+          }
+        });
+      },
+      {
+        threshold: 0.1, // Change threshold to be more sensitive
+      }
+    );
 
-      // Observe each section
+    setTimeout(() => {
       links.forEach((link) => {
         const section = document.getElementById(link.hash.substring(1));
         if (section) {
           observer.observe(section);
         }
       });
+    }, 100);
 
-      // Cleanup observer on component unmount
-      return () => {
-        observer.disconnect();
-      };
+    return () => {
+      observer.disconnect();
     };
+    // };
 
-    handleScrollHighlight();
+    // handleScrollHighlight();
   }, [links]);
+
+  useEffect(() => {
+    console.log(activeIndex);
+  }, [activeIndex]);
 
   const handleScroll = (hash: string, id: number) => {
     setActiveIndex(id);
@@ -102,7 +106,6 @@ export default function Header() {
       <div>
         <div className="m-0 p-0">
           <p className="text-teal-400 xl:text-6xl lg:text-6xl md:text-5xl sm:text-5xl text-5xl font-bold tracking-wide p-0 m-0">
-
             <motion.span
               className="mr-4"
               variants={typingVariants}
@@ -154,7 +157,6 @@ export default function Header() {
                       height="2"
                       viewBox="0 0 70 2"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
                       className="transition-all duration-1000 ease-in-out mt-[-4px]"
                     >
                       <path d="M0 0.797852L70 0.797852" stroke="#25FFCB" />
@@ -171,7 +173,6 @@ export default function Header() {
                       <path d="M0 1.29785L30 1.29785" stroke="#94a3b8" />
                     </svg>
                   )}
-
                   <div
                     className={`text-[13px] ml-7 font-medium tracking-widest uppercase ${
                       link?.id == activeIndex
@@ -190,7 +191,7 @@ export default function Header() {
 
       {/* CV and Social Links */}
       <div>
-        <Link href="/nilaksha_resume.pdf" passHref>
+        <Link href="/nilaksha_resume.pdf" passHref target="_blank">
           <div className="w-fit h-fit px-5 py-1.5 bg-teal-400 bg-opacity-10 rounded-[9px] justify-center items-center gap-2 inline-flex hover:scale-95 transition-all duration-500 ease-in-out">
             <div className="text-teal-400 text-normal mr-1 mt-[2px] tracking-wider ">
               See my resume
